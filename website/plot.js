@@ -33,6 +33,7 @@ let areaMap = {
     'Minhang': "闵行区",
     'Qingpu': "青浦区",
     'Jingan': "静安区",
+    'total':'全部',
     'Huangpu': "黄浦区"
 };
 
@@ -74,7 +75,8 @@ function streamgraphPlt(figContainer, data) {
         'Minhang': "闵行区",
         'Qingpu': "青浦区",
         'Jingan': "静安区",
-        'Huangpu': "黄浦区"
+        'Huangpu': "黄浦区",
+        
     };
 
     const areas = []
@@ -191,7 +193,7 @@ function streamgraphPlt(figContainer, data) {
         .on("mousemove", mousemove)
         .on("mouseleave", mouseleave)
 }
-
+// 河流图
 streamgraphPlt(figContainer = "#streamgraph", data = asymptomatic_data)
 
 // 较急	urgent
@@ -203,6 +205,8 @@ var scatterOpacityMap = {
     "acute" : "0.6",
     "critical" : "1"
 }
+
+// 热力散点图
 var scatter_df_url = 'https://raw.staticdn.net/LYA0728/dataJournalism/main/data/scatter_df.csv';
 var scatter_df_url2 = 'https://fastly.jsdelivr.net/gh/LYA0728/dataJournalism/data/scatter_df.csv';
 
@@ -296,8 +300,11 @@ console.log(s1) */
 // select lineChart
 
 var selectedCOVID_tend_url = "https://fastly.jsdelivr.net/gh/LYA0728/dataJournalism/data/selectedCOVID_tend.csv";
-var demanData_url = "https://fastly.jsdelivr.net/gh/LYA0728/dataJournalism/data/demandData.json"
-d3.csv(selectedCOVID_tend_url, (data) => {
+var selectedCOVID_tend_new_url = "https://fastly.jsdelivr.net/gh/LYA0728/dataJournalism/data/selectedCOVID_tend_new2.csv";
+var demanData_url = "https://fastly.jsdelivr.net/gh/LYA0728/dataJournalism/data/demand_new2.json"
+
+// selection button
+d3.csv(selectedCOVID_tend_new_url, (data) => {
     let Areas = data.map((d) => {
         return d["area"];
     })
@@ -323,7 +330,7 @@ d3.json(demanData_url, (data) => {
         data[i] = [JSON.parse(data[i])]
     } */
 
-    //console.log(data)
+    
     var opts = document.querySelectorAll("#selectButton > option");
     const areas = [];
     opts.forEach((d) => {
@@ -331,15 +338,16 @@ d3.json(demanData_url, (data) => {
         // console.log()
     });
 
+    // console.log(data[areas[0]])
     let selectData = []
-    //console.log(areas)
+    // console.log(areas)
     data[areas[0]].forEach((d) => {
         selectData.push(JSON.parse(d))
     })
 
     //console.log(data[areas[0]]);
 
-    // console.log(selectData)
+    //console.log(selectData)
 
     helpType = []
     for (i in selectData[0]) {
@@ -435,13 +443,15 @@ d3.json(demanData_url, (data) => {
     $("#selectButton").on('change', function () {
         let selectedArea = $(this).find("option:selected").attr("value");
 
-        console.log(1)
+        // console.log(1)
         selectData = [];
         //console.log(areas)
         data[selectedArea].forEach((d) => {
             selectData.push(JSON.parse(d))
         });
-        // console.log(selectData)
+
+
+        //console.log(selectData)
         var stackedData = d3.stack()
             .keys(helpType)
             (selectData)
@@ -485,9 +495,13 @@ d3.json(demanData_url, (data) => {
             .append("rect")
             .attr("class", "testBar")
             .attr("x", function (d) {
+                if(x1(d3.timeParse("%Y/%m/%d")(d.data.date)) != null){
                 // 这里循环的是每一个group,但需循环3次，将所有subgroups循环一次
                 // console.log(d.data);
-                return x1(d3.timeParse("%Y-%m-%d")(d.data.date));
+                return x1(d3.timeParse("%Y-%m-%d")(d.data.date));}
+                else{
+                    return x1(d3.timeParse("%Y/%m/%d")(d.data.date));
+                }
             })
             .attr("y", function (d) {
                 //console.log(d,d[1]);
@@ -500,7 +514,7 @@ d3.json(demanData_url, (data) => {
 });
 
 
-d3.csv(selectedCOVID_tend_url, (error, data) => {
+d3.csv(selectedCOVID_tend_new_url, (error, data) => {
     if (error) throw error;
     // console.log(data)
     let Areas = data.map((d) => {
@@ -545,11 +559,14 @@ d3.csv(selectedCOVID_tend_url, (error, data) => {
     var lineGenerator = d3.line().curve(d3.curveCardinal);
 
     //console.log(data)
+    
+    
     let selected_data = data.filter((d) => {
         // console.log(d["type"] == "asymptomatic")
         // console.log(d["area"] == Array.from(Areas)[0] & 1)
         return (d["type"] == "asymptomatic" & d["area"] == Array.from(Areas)[0])
     });
+    // console.log(selected_data)
     let selected_data2 = data.filter((d) => {
         // console.log(d["type"] == "asymptomatic")
         // console.log(d["area"] == Array.from(Areas)[0] & 1)
@@ -644,7 +661,7 @@ d3.csv(selectedCOVID_tend_url, (error, data) => {
     };
 
     d3.select("#selectButton").on("change", function () {
-        console.log(2)
+        //console.log(2)
         var selectedArea = d3.select(this).property("value")
         // console.log(selectedArea)
         upData(selectedArea)

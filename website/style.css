@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html,body{
+    background-color: #38425A;
+}
+
 .flexContainer {
     display: flex;
     display: -webkit-flex;
@@ -79,7 +83,11 @@ svg.flexContainer>g {
     font-size: 12px;
     font-weight: bold;
     text-anchor: end;
+    color:#fff;
+}
 
+text{
+    fill:#fff;
 }
 
 /* .style('transform', 'rotate(-45deg)')
