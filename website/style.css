@@ -7,7 +7,7 @@
 
 html,body{
     background-color: #38425A;
-}
+};
 
 .flexContainer {
     display: flex;
