@@ -1,0 +1,98 @@
+/* resetting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flexContainer {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-items: center;
+}
+
+#graph {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+
+    align-items: center;
+    justify-items: center;
+}
+
+
+
+#streamgraph {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-items: center;
+}
+
+#graph div.toggle {
+    height: 56px;
+    background: rgba(225, 225, 225, 0.85);
+    margin-bottom: 15px;
+    border-radius: 5px;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+
+    align-items: center;
+}
+
+#graph div.toggle> :not(div[class="activiteBlock"]) {
+    flex: 1;
+    height: 90%;
+    border: 1px solid red;
+    line-height: 45px;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: bold;
+    cursor: pointer;
+
+    position: relative;
+    z-index: 5;
+}
+
+.activiteBlock {
+    /* width:50%;
+    height:100%; */
+    border-radius: 5px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 4;
+
+    transition: all 0.5s ease;
+}
+
+/* g,path{
+    pointer-events: all;
+} */
+
+svg.flexContainer>g {
+    margin: auto;
+}
+
+.xAxisLable {
+    transform: rotate(-45deg);
+    font-size: 12px;
+    font-weight: bold;
+    text-anchor: end;
+
+}
+
+/* .style('transform', 'rotate(-45deg)')
+        .style('text-anchor', "end")
+        .style("font-size", "12px")
+        .style("font-weight", "bold") */
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 3800;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
