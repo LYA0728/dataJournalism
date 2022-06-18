@@ -1,0 +1,41 @@
+/* resetting */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.plot{
+    width: 100vw;
+}
+
+#graph div.toggle{
+    width:90vw;
+    height:46px;
+    margin-bottom: 10px;
+}
+
+
+#graph div.toggle > :not(div[class="activiteBlock"]){
+    flex:1;
+    height:90%;
+    border: 1px solid red;
+    line-height:40px;
+    font-size:16px;
+    text-align: center;
+    letter-spacing:5px;
+    font-weight: bold;
+    cursor: pointer;
+
+    position: relative;
+    z-index: 5;
+}
+
+
+.xAxisLable{
+    transform: rotate(-45deg);
+    font-size:10px;
+    font-weight:normal;
+    text-anchor:end;
+}
+
