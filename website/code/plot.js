@@ -763,10 +763,11 @@ plot.prototype = {
         this.plotMain.querySelector(".bars").innerHTML = `<div class="barItem"></div>`.repeat(x.length)
         this.plotMain.querySelector(".xaxis").innerHTML = `<div class="xlabel"></div>`.repeat(x.length)
         //this.plotMain.querySelector(".xlabel").innerHTML = `<div class="barItem"></div>`.repeat(x.length)
-        if (mediaQuery.matches) {
+        /* if (mediaQuery.matches) {
             fileName = fileName.map((d) => { return `mobile-${d}` })
-        };
+        }; */
 
+        fileName = fileName.map((d) => { return `https://raw.githubusercontents.com/LYA0728/dataJournalism/main/website/mediaResource/${d}` })
         for (let i = 0; i < y.length; i++) {
             $("div.barItem").eq(i).css({
                 "height": this.y(y[i]),
