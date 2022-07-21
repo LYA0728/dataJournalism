@@ -817,7 +817,7 @@ plot.prototype = {
         <div class="plotMain"></div>
         <div class="plotFooter"><p></p></div>
         `; */
-
+        fileName = fileName.map((d) => { return `https://raw.githubusercontents.com/LYA0728/dataJournalism/main/website/mediaResource/${d}` })
         
         this.plotMain.innerHTML = '<div class="tootip"></div>';
         this.tooltip = this.element.querySelector("div.plotMain > div.tootip");
