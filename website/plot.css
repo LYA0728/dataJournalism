@@ -75,7 +75,7 @@ div.plotFooter>p{
 
 .graph>div,.grid-graph>div {
     background-color: transparent;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     /* padding: 10px; */
     font-size: 10px;
     text-align: center;

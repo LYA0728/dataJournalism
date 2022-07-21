@@ -42,7 +42,7 @@ body {
 }
 
 body {
-    background-image: url("https://raw.staticdn.net/LYA0728/dataJournalism/main/website/mediaResource/img/htmlbg.png");
+    background-image: url("https://raw.githubusercontents.com/LYA0728/dataJournalism/main/website/mediaResource/htmlbg.png");
 }
 
 
@@ -232,21 +232,21 @@ div#forword+div.container>img {
 }
 
 #parallaxPage1 {
-    background-image: url('https://raw.staticdn.net/LYA0728/dataJournalism/main/website/mediaResource/img/parallaxPage1Large.jpg');
+    background-image: url('https://raw.githubusercontents.com/LYA0728/dataJournalism/main/website/mediaResource/parallaxPage1Large.jpg');
     background-color: #000;
     filter: Alpha(Opacity=60);
     opacity: 0.6;
 }
 
 #parallaxPage2 {
-    background-image: url('https://raw.staticdn.net/LYA0728/dataJournalism/main/website/mediaResource/img/parallaxPage2Large.jpg');
+    background-image: url('https://raw.githubusercontents.com/LYA0728/dataJournalism/main/website/mediaResource/parallaxPage2Large.jpg');
     background-color: #000;
     filter: Alpha(Opacity=60);
     opacity: 0.6;
 }
 
 #parallaxPage3 {
-    background-image: url('https://raw.staticdn.net/LYA0728/dataJournalism/main/website/mediaResource/img/hand-gacaelarge.jpg');
+    background-image: url('https://raw.githubusercontents.com/LYA0728/dataJournalism/main/website/mediaResource/hand-gacaelarge.jpg');
     background-color: #000;
     filter: Alpha(Opacity=60);
     opacity: 0.6;
@@ -404,7 +404,7 @@ div.doubleDiv i{
 
 /* 按钮提示 */
 div.tips > div{
-    background-image: url("https://raw.staticdn.net/LYA0728/dataJournalism/main/website/mediaResource/img/tips.svg");
+    background-image: url("https://raw.githubusercontents.com/LYA0728/dataJournalism/main/website/mediaResource/tips.svg");
     width: 150px;
     font-size:14px;
     padding: 12px;

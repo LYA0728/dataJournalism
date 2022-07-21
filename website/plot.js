@@ -785,7 +785,7 @@ plot.prototype = {
 
             let barWidth = $(".barItem").eq(i).width(), barHeight = $(".barItem").eq(i).height();
             /* divs = `<div class="circle" style="width:${Math.floor(barWidth / 4)}px;height:${Math.floor(barWidth / 4)}px"></div>`; */
-            img = `<img class="img-responsive" style="width:${Math.floor(barWidth / 4)}px;height:${Math.floor(barWidth / 4)}px" src='./img/${fileName[i]}.svg'>`;
+            img = `<img class="img-responsive" style="width:${Math.floor(barWidth / 4)}px;height:${Math.floor(barWidth / 4)}px" src='https://raw.githubusercontents.com/LYA0728/dataJournalism/main/website/mediaResource/${fileName[i]}.svg'>`;
             let Num = Math.floor(barHeight / (Math.floor(barWidth / 4)));
             $(".barItem").eq(i).html(img.repeat(4 * Num));
 
@@ -793,7 +793,7 @@ plot.prototype = {
                 'background-repeat': 'no-repeat',
                 'background-position': 'center',
                 'background-size': 'cover',
-                "background": `url('https://raw.staticdn.net/LYA0728/dataJournalism/main/website/mediaResource/${fileName[i]}.svg')`
+                // "background": `url('https://raw.githubusercontents.com/LYA0728/dataJournalism/main/website/mediaResource/${fileName[i]}.svg')`
             }
 
             $(".barItem").eq(i).find("div.circle").css(bgStyle)
@@ -854,7 +854,7 @@ plot.prototype = {
                 .attr('height', (d) => { return d.radius * 1.5 })
                 .attr('x', (d) => { return d.x - d.radius / 1.3 })
                 .attr('y', (d) => { return d.y - d.radius / 1.3 })
-                .attr("xlink:href", (d) => { return `https://raw.staticdn.net/LYA0728/dataJournalism/main/website/mediaResource/${d["fileName"]}` })
+                .attr("xlink:href", (d) => { return `https://raw.githubusercontents.com/LYA0728/dataJournalism/main/website/mediaResource/${d["fileName"]}` })
                 .attr("preserveAspectRatio", "none meet");
 
 
@@ -1248,7 +1248,7 @@ new plot(document.querySelector("div#forceCircle2"))["forceCircle"](
     category = ['其它', '导尿管、吸痰管', '造口袋', '氧气瓶/袋', '物理支架', '拉拉裤', '注射器', '检测试剂', '温度计', '冲洗器', '护理液', '未知', '眼镜', '针头'],
     Size = [14, 24, 14, 6, 11, 68, 3, 1, 1, 1, 1, 3, 1, 1,],
     fileName = ["other.svg", "pipeline.svg", "bag2.svg",
-        "oxygenCylinder.svg", "crutch.svg", "diaper.svg", "syringe.svg", "testkit.svg", "thermometer.svg", "wash.svg",
+        "oxygenCylinder.svg", "crutch.svg", "Diaper.svg", "syringe.svg", "testkit.svg", "thermometer.svg", "wash.svg",
         'Nursing liquid.svg', 'unknown.svg', "glass.svg", "needle.svg"
     ]
 )["theme"](title = "家用医疗物品需求",
