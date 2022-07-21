@@ -687,6 +687,11 @@ div#circularStackBar{
     g.simpleCircularBarLabel text{
         font-size:10px;
     }
+    
+    g.legend text{
+        font-family:SourceHanSerifCN-Regular;
+        font-size:8px;
+    }
 }
 
 g.barGroup{
