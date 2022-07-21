@@ -767,7 +767,7 @@ plot.prototype = {
             fileName = fileName.map((d) => { return `mobile-${d}` })
         }; */
 
-        fileName = fileName.map((d) => { return `https://raw.staticdn.net/LYA0728/dataJournalism/main/website/mediaResource/${d}` })
+        /* fileName = fileName.map((d) => { return `https://raw.staticdn.net/LYA0728/dataJournalism/main/website/mediaResource/${d}` }) */
         for (let i = 0; i < y.length; i++) {
             $("div.barItem").eq(i).css({
                 "height": this.y(y[i]),
@@ -793,7 +793,7 @@ plot.prototype = {
                 'background-repeat': 'no-repeat',
                 'background-position': 'center',
                 'background-size': 'cover',
-                "background": `url('./img/${fileName[i]}.svg')`
+                "background": `url('https://raw.staticdn.net/LYA0728/dataJournalism/main/website/mediaResource/${fileName[i]}.svg')`
             }
 
             $(".barItem").eq(i).find("div.circle").css(bgStyle)
@@ -817,7 +817,7 @@ plot.prototype = {
         <div class="plotMain"></div>
         <div class="plotFooter"><p></p></div>
         `; */
-        fileName = fileName.map((d) => { return `https://raw.staticdn.net/LYA0728/dataJournalism/main/website/mediaResource/${d}` })
+        /* fileName = fileName.map((d) => { return `https://raw.staticdn.net/LYA0728/dataJournalism/main/website/mediaResource/${d}` }) */
         
         this.plotMain.innerHTML = '<div class="tootip"></div>';
         this.tooltip = this.element.querySelector("div.plotMain > div.tootip");
@@ -854,7 +854,7 @@ plot.prototype = {
                 .attr('height', (d) => { return d.radius * 1.5 })
                 .attr('x', (d) => { return d.x - d.radius / 1.3 })
                 .attr('y', (d) => { return d.y - d.radius / 1.3 })
-                .attr("xlink:href", (d) => { return `img/${d["fileName"]}` })
+                .attr("xlink:href", (d) => { return `https://raw.staticdn.net/LYA0728/dataJournalism/main/website/mediaResource/${d["fileName"]}` })
                 .attr("preserveAspectRatio", "none meet");
 
 
