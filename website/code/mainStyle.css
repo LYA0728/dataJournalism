@@ -1,0 +1,937 @@
+/* css变量 */
+
+:root {
+    --lineHight: 35px;
+    --highlightColor: #000;
+    --highlightColor2: #000;
+    --floatBg: rgba(0, 0, 0, 0.6);
+    --htmlbg: #282F41;
+    --explainColor: #AFABAB;
+    --heightBg: #2BAA5D;
+}
+
+/* font config */
+@font-face {
+    /* 思源黑体Bold */
+    font-family: NotoSansCJK-Bold;
+    src: url("https://fastly.jsdelivr.net/gh/LYA0728/fonts/NotoSansCJK-Bold.otf");
+
+    /* 思源黑体Regular */
+    font-family: NotoSansCJK-Regular;
+    src: url("https://fastly.jsdelivr.net/gh/LYA0728/fonts/NotoSansCJK-Regular.otf");
+
+
+    /* 思源宋体Regular */
+    font-family: SourceHanSerifCN-Regular;
+    src: url("https://fastly.jsdelivr.net/gh/LYA0728/fonts/SourceHanSerifCN-Regular.otf");
+}
+
+/* resetting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    /* background-color: var(--htmlbg); */
+    /* color: #000; */
+    font-family: NotoSansCJK-Regular;
+    /* transition:all 1s ease; */
+}
+
+body {
+    /* background-image: url("./img/htmlbg.png"); */
+    background-image: url('https://raw.githubusercontents.com/LYA0728/dataJournalism/main/website/mediaResource/htmlbg.png');
+}
+
+
+/* 封面样式 */
+#cover {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    margin-bottom: 35px;
+    /* border: 1px solid #000; */
+}
+
+div#cover > div{
+    /* border: 1px solid red; */
+    /* width: 100%; */
+    height: 100%;
+    flex: 1;
+    display: flex;
+    display: -webkit-flex;
+}
+
+div#cover > div:nth-child(1){
+    font-family: NotoSansCJK-Bold;
+    flex-direction: column;
+    font-weight: bold;
+    font-size:48px;
+    height: 30%;
+    align-self: center;
+}
+
+div#cover > div:nth-child(1) > p{
+    margin: auto;
+}
+
+div#cover > div:nth-child(1) > p:nth-child(2){
+    font-size:20px;
+    background-color: #000;
+    color:#fff;
+    padding: 0 10px;
+}
+
+div#cover div.doubleDiv{
+    width: auto;
+    margin: auto;
+}
+
+div#cover div.doubleDiv>div:nth-child(2) {
+    
+    background-color: var(--heightBg);
+    /* background-image: url();
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:55px 10px; */
+}
+
+div#cover div.doubleDiv>div:nth-child(1) {
+    top: 5px;
+    left: 5px;
+    background-color: #000;  
+}
+
+div#cover div.doubleDiv p{
+    font-size:24px;
+    margin: 0;
+    padding: 10px 35px;
+}
+
+div#cover > div:nth-child(2){
+    height: 80%;
+    align-self: center;
+}
+
+div#cover div.doubleDiv img{
+    position: absolute;
+    z-index: 9999;
+    /* transform:translate(45px,-85px) */
+}
+/* #cover img {
+    flex: 1
+}
+
+#cover>img:nth-child(1) {
+    align-self: flex-end;
+}
+
+#cover img:nth-child(3) {
+    align-self: flex-start;
+}
+
+#cover>div {
+    display: flex;
+    display: -webkit-flex;
+    flex: 3;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    align-self: end;
+    padding-right: 35px;
+}
+
+#cover>div>p {
+    font-size: 36px;
+}
+
+#cover>div>p:nth-child(1) {
+    font-weight: bold;
+    font-family: NotoSansCJK-Bold;
+}
+
+#cover>div>p:nth-child(2) {
+    font-family: NotoSansCJK-Regular;
+} */
+
+/* 引导语部分 */
+#forword {
+    width: 100%;
+    height: auto;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+
+    font-family: NotoSansCJK-Regular;
+    line-height: 30px;
+    font-size: 16px;
+}
+
+#forword>div.img {
+    flex: 3;
+    /* border: 1px solid #fff; */
+    height: auto;
+    align-self: flex-start;
+}
+
+#forword>div:nth-child(2) {
+    flex: 6;
+    /* border: 1px solid #fff; */
+}
+
+#forword>div.img {
+    position: sticky;
+    top: 80px;
+}
+
+#forword>div.img>img:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 2.0s ease;
+}
+
+#forword div.text>p>span {
+    font-size: 16px;
+    line-height:30px;
+}
+
+div#forword+div.container>img {
+    border-radius: 10px;
+    margin: 10px auto;
+    max-width: 768px;
+    margin-top: 25px;
+    
+}
+
+/* 过渡页视差效果 */
+.parallax {
+    width: 100%;
+    height: 90vh;
+    margin: 80px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.parallax>div {
+    color: #fff;
+    opacity: 1;
+    font-family: NotoSansCJK-Bold;
+    font-size: 36px;
+    font-weight: bold;
+    position: absolute;
+    right: 50px;
+    bottom: 35px;
+}
+
+#parallaxPage1 {
+    background-image: url('https://raw.githubusercontents.com/LYA0728/dataJournalism/main/website/mediaResource/parallaxPage1Large.jpg');
+    background-color: #000;
+    filter: Alpha(Opacity=60);
+    opacity: 0.6;
+}
+
+#parallaxPage2 {
+    background-image: url('https://raw.githubusercontents.com/LYA0728/dataJournalism/main/website/mediaResource/parallaxPage2Large.jpg');
+    background-color: #000;
+    filter: Alpha(Opacity=60);
+    opacity: 0.6;
+}
+
+#parallaxPage3 {
+    background-image: url('https://raw.githubusercontents.com/LYA0728/dataJournalism/main/website/mediaResource/hand-gacaelarge.jpg');
+    background-color: #000;
+    filter: Alpha(Opacity=60);
+    opacity: 0.6;
+}
+
+/* 通用样式 */
+/* 文字高亮 */
+.bg-light {
+    background-color: var(--heightBg);
+    color: #fff;
+}
+
+.text-highlighting {
+    color: var(--heightBg);
+    background-color: transparent;
+    font-family: NotoSansCJK-Bold;
+}
+
+.text-highlighting2 {
+    color: var(--highlightColor2)
+}
+
+.text-bold {
+    font-weight: bold;
+    font-family: NotoSansCJK-Bold;
+}
+
+.text {
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+.text>p {
+    font-size: 0px;
+    text-align: justify;
+}
+
+.text>p>span {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.text-explain {
+    color: var(--explainColor);
+    font-family: NotoSansCJK-Regular;
+    font-size: 14px;
+    max-width: 768px;
+    padding: 5px;
+}
+
+
+
+.text-Italics {
+    font-weight: italic;
+}
+
+div.titleContainer {
+    margin-bottom: 50px;
+}
+
+/* 标题 */
+
+div.centerContainer{
+    display: flex;
+    display: -webkit-flex;
+    margin-bottom: 50px;
+}
+div.titleContainer {
+    /* border:1px solid #fff; */
+    height: auto;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+}
+
+div.titleContainer img {
+    flex: 0.5;
+    align-items: center;
+}
+
+div.titleContainer p {
+    flex: 8;
+    color: #000;
+    font-size: 28px;
+    font-weight: bold;
+    padding-left: 15px;
+    margin: auto;
+    font-family: NotoSansCJK-Bold;
+}
+
+/* doubleDiv */
+div.doubleDivContainer {
+    /* border: 1px solid #000; */
+    height: auto;
+    max-width: 768px;
+}
+
+div.doubleDivContainer {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.doubleDivContainer>div {
+    margin: 0 15px;
+}
+
+div.doubleDivContainer>div:nth-child(1) {
+    flex: 2;
+}
+
+div.doubleDivContainer>div:nth-child(2) {
+    flex: 10;
+}
+
+div.doubleDiv {
+    position: relative;
+    /* background-color: #F2FFFF; */
+    text-align: justify;
+}
+
+div.doubleDiv>div {
+    border-radius: 15px;
+    border: 2.5px solid #000;
+    padding: 15px 20px;
+    width: 100%;
+    height: 100%;
+}
+
+div.doubleDiv>div:nth-child(2) {
+    position: relative;
+    background-color: #F2FFFF;
+    border-radius: 15px;
+    color: #000;
+    z-index: 2;
+    cursor: pointer;
+}
+
+div.doubleDiv>div:nth-child(1) {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+    background-color: #2BAA5D;
+    z-index: 1;
+}
+
+div.doubleDiv i{
+    line-height: 20px;
+}
+
+/* 按钮提示 */
+div.tips > div{
+    background-image: url("https://raw.githubusercontents.com/LYA0728/dataJournalism/main/website/mediaResource/tips.svg");
+    width: 150px;
+    font-size:14px;
+    padding: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:#fff;
+    font-family: NotoSansCJK-Bold;
+    font-weight: bold;
+    transform: translateY(60px);
+}
+
+/* 媒体查询 */
+@media (max-width:767px) {
+
+    div#cover > div:nth-child(1){
+        
+        font-size:22px;
+        height: 30%;
+    }
+    
+    div#cover > div:nth-child(1) > p:nth-child(2){
+        font-size:14px;
+        background-color: #000;
+        color:#fff;
+        padding: 0 5px;
+    }
+    
+    div#cover div.doubleDiv>div:nth-child(1) {
+        top: 2.5px;
+        left: 2.5px;
+        background-color: #000;  
+    }
+    
+    div#cover div.doubleDiv p{
+        font-size:16px;
+        margin: 0;
+        padding: 0px 0px;
+    }
+    
+    div#cover > div:nth-child(2){
+        height: 40%;
+        align-self: center;
+    }
+    
+    div#cover div.doubleDiv img{
+        position: absolute;
+        z-index: 9999;
+        /* transform:translate(25px,-30px) */
+    }    
+
+    /* 引导语部分 */
+    #forword {
+        line-height: 40px;
+        font-size: 12px;
+    }
+
+    #forword div.text>p>span {
+        font-size: 12px;
+    }
+
+    div#forword+div.container>img {
+        border-radius: 5px;
+        margin: 10px 0;
+        max-width: 360px;
+    }
+
+    /* #forword>div.img{
+        display: none;
+    } */
+
+    /* 过渡页 */
+    .parallax {
+        margin: 40px 0;
+    }
+
+    .parallax>div {
+        font-size: 22px;
+        font-family: NotoSansCJK-Bold;
+        font-weight: bold;
+        position: absolute;
+        right: 1px;
+        bottom: 5px;
+    }
+
+    #parallaxPage1 {
+        /* background-image: url('./img/parallaxPage1Large.jpg');  */
+        background-position: -1100px center;
+    }
+
+    .text-explain {
+        color: var(--explainColor);
+        font-family: NotoSansCJK-Regular;
+        font-size: 12px;
+    }
+
+
+    /* 通用样式 */
+    .text {
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .text>p>span {
+        font-size: 14px;
+        color: #000
+    }
+
+    /* 小标题 */
+    div.titleContainer p {
+        flex: 8;
+        color: #000;
+        font-size: 18px;
+        font-weight: bold;
+        padding-left: 10px;
+        margin: auto;
+        font-family: NotoSansCJK-Bold;
+    }
+
+    div.tips > div{
+        width: 200px;
+        font-size:10px;
+        padding: 2.5px;
+        transform: translate(60px,60px);
+        display: none;
+    }
+
+    .plotDropdown{
+        width: 30%;
+    }
+
+}
+
+.ph3 {
+    font-size: 20px !important;
+}
+
+div.divBorder {
+    /* border: 1px solid #fff; */
+    position: relative;
+}
+
+div.divBorder h3 {
+    /* border: 1px solid #fff; */
+    position: relative;
+    z-index: 2;
+    padding-left: 25px;
+}
+
+div.divBorder>p {
+    line-height: 30px;
+    position: relative;
+    z-index: 1;
+    color: #000;
+    padding: 15px 30px;
+    padding-right: 50px;
+    z-index: 2;
+}
+
+div.divBorder img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+div.divBorder .bgPink {
+    background-color: #CA6867;
+    color: #000;
+}
+
+div.justify-center {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+}
+
+div.justify-center>* {
+    margin: auto;
+}
+
+div.imgContainer {
+    margin: 0 auto;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-width: 768px;
+    /* border: 1px solid #fff */
+}
+
+div.imgContainer>img {
+    width: 65%;
+    height: auto;
+    border-radius: 2.5px;
+}
+
+
+
+div#weiboScreenshot {
+    margin: 0 auto;
+    display: -webkit-flex;
+    display: flex;
+    max-width: 768px;
+    /* border: 1px solid #fff; */
+    align-content: space-around;
+    flex-direction: row;
+
+}
+
+div#weiboScreenshot>img {
+    flex: 1;
+    margin: auto;
+    width: 45%;
+    border-radius: 2.5px;
+    /* padding: 0 10px; */
+}
+
+div#weiboScreenshot>img:nth-child(1) {
+    padding-right: 5px;
+}
+
+@media (max-width:768px) {
+    div.imgContainer>img {
+        max-width: 360px;
+        height: auto;
+        margin: auto;
+        border-radius: 2.5px;
+    }
+
+    .parallax {
+        height: 60vh;
+    }
+
+    div#weiboScreenshot {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 768px;
+        align-content: space-around;
+    }
+
+    div#weiboScreenshot>img:nth-child(1) {
+        padding-right: 0px;
+        margin-bottom: 25px;
+    }
+
+    div#weiboScreenshot>img {
+        flex: 1;
+        margin: auto;
+        width: 95%;
+        border-radius: 5px;
+        /* padding: 0 10px; */
+    }
+
+    div.titleContainer {
+        margin-bottom: 25px;
+    }
+
+    #footer,#footer li {
+        max-width: 300px;
+    }
+
+    #footer>div.citations {
+        font-size: 12px;
+        line-height: 24px;
+    }
+
+    .ph3 {
+        font-size: 16px !important;
+    }
+}
+
+/* img.img-responsive{
+    border: 1px solid #fff;
+}
+ */
+
+
+hr {
+    color: #000;
+    background-color: #000;
+    height: 1px;
+    border: 1px solid #000;
+    /* width: 1px; */
+}
+
+
+#footer {
+    max-width: 768px;
+    display: -webkit-flex;
+    display: flex;
+    margin: 0 auto;
+}
+
+#footer>div.citations {
+    margin: auto;
+    justify-content: center;
+    font-family: NotoSansCJK-Regular;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.text-center {
+    text-align: center !important;
+    color: #000
+}
+
+
+/* 导航样式 */
+
+div#nav{
+    display: -webkit-flex;
+    display: flex;
+    
+    flex-direction: column;
+    width: 120px;
+    z-index: 999;
+    /* border: 1px solid red; */
+    position: fixed;
+    left:0px;
+    top:0px;
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+div#nav div.doubleDiv {
+    position: relative;
+    /* background-color: #F2FFFF; */
+    text-align: justify;
+    margin: 7.5px 0px;
+}
+
+div#nav div.doubleDiv>div {
+    border-radius: 5px;
+    border: 2.5px solid #000;
+    padding: 5px 10px;
+    width: 100%;
+    height: 100%;
+    
+}
+
+div#nav div.doubleDiv>div:nth-child(2) {
+    position: relative;
+    background-color: var(--heightBg);
+    color: #000;
+    z-index: 2;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+div#nav div.doubleDiv>div:nth-child(2) > a{
+    color:#000;
+    font-family: NotoSansCJK-Bold;
+    font-weight: bold;
+    font-size:18px;
+    text-decoration: none;
+}
+
+div#nav div.doubleDiv>div:nth-child(1) {
+    position: absolute;
+    top: 2.5px;
+    left: 4px;
+    background-color: #000;
+    z-index: 1;
+}
+
+div#nav div.navActivate a{
+    color:#fff!important;
+}
+
+/* div#nav {
+    display: -webkit-flex;
+    display: flex;
+    margin: 5px auto;
+    flex-direction: row;
+    width: 100%;
+    position: sticky;
+    top:0;
+    z-index: 999
+}
+
+div#nav > div{
+    height:50px;
+    background-color: var(--htmlbg);
+    flex: 1;
+    margin: auto;
+    display: -webkit-flex;
+    display: flex;
+}
+
+div#nav > div >p{
+    color:#fff;
+    margin: auto;
+    font-family: NotoSansCJK-Bold;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+} */
+
+
+
+/* div#nav{
+    display: -webkit-flex;
+    display: flex;
+    
+    flex-direction: column;
+    width: 100px;
+    z-index: 999;
+    border: 1px solid #000;
+    position: fixed;
+    left:0px;
+    top:0px;
+    opacity: 0;
+
+    transition: all 1s ease;
+}
+
+div#nav > div{
+    height:50px;
+    margin: 5px 0;
+    background-color: var(--heightBg);
+    flex: 1;
+    
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    border: 0px solid #000;
+    border-width: 2.5px 8.5px 7.5px 3.5px;
+    border-radius: 8.5px;
+} */
+
+
+
+/* div#nav > div >a{
+    color:#000;
+    margin: auto;
+    font-family: NotoSansCJK-Bold;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    justify-content: flex-start;
+    align-items: flex-end;
+    text-decoration: none;
+} 
+
+div#nav > div >a:hover{
+    
+    color:#fff;
+    opacity: 0.5;
+}
+
+div#nav > div.navActivate>a{
+    color:#fff
+} */
+
+html{
+    scroll-behavior: smooth;
+}
+
+div#ending{
+    display: -webkit-flex;
+    display: flex;
+    max-width: 768px;
+    flex-direction: column;
+    height: auto;
+    margin:15px auto;
+}
+
+div#ending > div{
+    flex: 1;
+    /* border:1px solid #000; */
+    height: 100%;
+    width: 100%;
+}
+
+div#ending > div.text{
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div#endingAn{
+    align-self: center;
+    justify-self: center;
+}
+
+
+div#backToTop > img{
+    width: 64px;
+    height:64px;
+    cursor: pointer;
+}
+@media (max-width:768px){
+    div#nav{
+        display: none;
+    }
+
+    div#backToTop > img{
+        width: 32px;
+        height:32px;
+    }
+}
+
+div#statement{
+    width:100%;
+    height: 25px;
+    background-color:#333;
+    display: flex;
+    display: -webkit-flex;
+    margin-top: 50px;
+}
+
+div#statement > p{
+    color:#fff;
+    margin: auto;
+    line-height: 25px;
+}
+/* 
+div#weiboScreenshot + div{
+    border: 1px solid red
+} */
+
